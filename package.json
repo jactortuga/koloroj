@@ -1,0 +1,26 @@
+{
+  "name": "koloroj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/dist/app.bundle.js",
+  "scripts": {
+    "start:dev": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jactortuga/koloroj.git"
+  },
+  "author": "Tortuga Labs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jactortuga/koloroj/issues"
+  },
+  "homepage": "https://github.com/jactortuga/koloroj#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^3.7.1",
+    "webpack-dev-server": "^2.9.2"
+  }
+}
