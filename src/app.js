@@ -1,1 +1,1 @@
-console.log('Hello World');
+import styles from '../dist/assets/stylesheets/application.scss';

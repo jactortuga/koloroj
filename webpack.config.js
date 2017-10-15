@@ -24,7 +24,14 @@ module.exports = {
           options: { presets: ['es2015'] },
         }],
       },
-
+      {
+        test: /\.(sass|scss)$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ]
+      } 
       // Loaders for other file types can go here
     ],
   },
