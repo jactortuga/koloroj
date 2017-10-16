@@ -26,19 +26,14 @@ module.exports = {
       },
       {
         test: /\.(sass|scss)$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      },
-      {
-        test: /\.css$/,
         use: ExtractTextPlugin.extract({
           use: [{
-            loader: 'css-loader',
-            options: { importLoaders: 1 }
+            loader: 'css-loader'
+          }, {
+            loader: 'sass-loader'
           }]
+          // use style-loader in development
+          // fallback: "style-loader"
         })
       }
     ]
