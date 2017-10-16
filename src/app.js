@@ -1,1 +1,1 @@
-import styles from '../dist/assets/stylesheets/application.scss';
+// import styles from '../dist/assets/stylesheets/application.css';
