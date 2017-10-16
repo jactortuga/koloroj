@@ -3,17 +3,16 @@ const webpack           = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
   entry: {
-    app: ['./app.js', './color.js']
+    app: ['./src/js/app.js', './src/js/color.js']
   },
   output: {
-    path: path.resolve(__dirname, 'dist', 'assets'),
-    filename: '[name].bundle.js',
-    publicPath: '/assets'
+    path: __dirname,
+    filename: './dist/js/app.js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'src')
+    // contentBase: path.resolve(__dirname, 'dist')
+    contentBase: path.resolve(__dirname)
   },
   module: {
     rules: [
@@ -46,8 +45,9 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: '[name].bundle.css',
+      filename: './dist/css/style.css',
       allChunks: true
+      // disable: process.env.NODE_ENV === "development"
     })
   ]
 };
