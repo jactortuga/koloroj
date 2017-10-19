@@ -9,10 +9,12 @@ $tiny-font: 10px
 
 $mobile-large-font: 16px
 $mobile-medium-font: 14px
+$mobile-small-font: 11px
 
 $iphone-large-break: 420px
-$iphone-regular-break: 420px
+$iphone-medium-break: 375px
 $iphone-small-break: 320px
+
 
 .body
   background-color: $background-color
@@ -24,6 +26,7 @@ $iphone-small-break: 320px
   padding: 20px
   width: 100vw
 
+
 .header
   width: 100%
   height: 50px
@@ -31,6 +34,7 @@ $iphone-small-break: 320px
 .title
   font-family: Futura,Trebuchet MS,Arial,sans-serif
   font-size: $large-font
+
 
 .main
   display: flex
@@ -44,13 +48,13 @@ $iphone-small-break: 320px
   font-size: $medium-font
 
   @media screen and (max-width: $iphone-large-break)
-    font-size: $mobile-font-large
+    font-size: $mobile-large-font
 
-  @media screen and (max-width: $iphone-large-break)
+  @media screen and (max-width: $iphone-medium-break)
     font-size: $mobile-medium-font
 
-  // @media screen and (max-width: $iphone-large-break)
-  //   font-size: $mobile-medium-font
+  @media screen and (max-width: $iphone-small-break)
+    font-size: $mobile-small-font
 
   &__text
 
@@ -62,8 +66,6 @@ $iphone-small-break: 320px
     font-weight: 500
 
 
-
-
 .footer
   display: flex
   flex-direction: column
@@ -72,7 +74,6 @@ $iphone-small-break: 320px
   justify-content: flex-end
   text-align: right
   width: 100%
-
 
 .credits
 
