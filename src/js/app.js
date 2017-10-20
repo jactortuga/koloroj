@@ -1,10 +1,10 @@
 import styles from '../sass/main.sass';
 
 
-const keyboardKey     = 32;
-const siteBackground  = document.body;
-const siteHexText     = document.getElementById('hex-value');
-const colorRange      = 'ABCDEF0123456789';
+const keyboardKey       = 32;
+const siteBackground    = document.body;
+const siteHexContainer  = document.getElementById('siteHexContainer');
+const colorRange        = 'ABCDEF0123456789';
 
 
 var generateColor = () => {
@@ -19,7 +19,8 @@ var updateBackgroundColor = (newColor) => {
 };
 
 var updateTextValue = (newColor) => {
-  siteHexText.innerHTML = newColor;
+  siteHexContainer.innerHTML = newColor;
+  siteHexContainer.classList.add('content__text--hex');
 };
 
 document.body.onkeyup = function(ev){
