@@ -62,8 +62,13 @@ $iphone-small-break: 320px
     transition: all 0.2s ease-in-out
 
     &--hex
+      cursor: pointer
       font-size: $large-font
       font-weight: 500
+
+      &::selection
+        background-color: black
+        color: white
 
 
 .footer
@@ -79,7 +84,8 @@ $iphone-small-break: 320px
 
 .button
   background-color: transparent
-  background-size: cover
+  background-repeat: no-repeat
+  background-size: contain
   border: none
   cursor: pointer
   height: 25px

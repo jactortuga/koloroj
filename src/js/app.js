@@ -76,3 +76,7 @@ menuButton.addEventListener('click', function() {
     menuContainer.classList.add('menu--show');
   }
 });
+
+siteHexContainer.addEventListener('click', function() {
+  copyColor();
+});
