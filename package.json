@@ -4,7 +4,9 @@
   "description": "",
   "main": "/dist/app.bundle.js",
   "scripts": {
-    "start:dev": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "prod": "NODE_ENV=production node server.js",
+    "postinstall": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,8 @@
     "style-loader": "^0.19.0",
     "webpack": "^3.7.1",
     "webpack-dev-server": "^2.9.2"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
   }
 }
