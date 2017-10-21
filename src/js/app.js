@@ -1,6 +1,6 @@
 import styles from '../sass/main.sass';
 
-
+let latestHexCopied     = false;
 const keyboardKey       = 32;
 const altKey            = 18;
 const siteBackground    = document.body;
@@ -21,24 +21,26 @@ var generateColor = () => {
 var copyColor = () => {
   var hexValue = siteHexContainer.innerHTML;
 
-  if (hexValue.length > 7) return false;
+  if (hexValue.length > 7 || hexValue === latestHexCopied) return false;
 
   var newContainer  = document.createElement('div');
   var newBox        = document.createElement('button');
   var newHexValue   = document.createTextNode(hexValue);
 
   newContainer.classList.add('colors__label');
-  newBox.classList.add('color');
-
+  newBox.classList.add('colors__square');
+  newBox.style.backgroundColor = hexValue;
   newContainer.appendChild(newBox);
   newContainer.appendChild(newHexValue);
   menuGrid.appendChild(newContainer);
 
+  latestHexCopied = hexValue;
 };
 
 
 var updateBackgroundColor = (newColor) => {
   siteBackground.style.backgroundColor = newColor;
+
 };
 
 var updateTextValue = (newColor) => {
