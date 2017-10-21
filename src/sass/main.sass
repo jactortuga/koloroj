@@ -81,21 +81,51 @@ $iphone-small-break: 320px
   background-image: url('/dist/img/paintbrush.svg')
   background-size: cover
   border: none
-  height: 35px
-  width: 35px
+  cursor: pointer
+  height: 25px
+  position: relative
+  transform: scale(1)
+  transition: transform 0.2s ease-in-out
+  width: 25px
+  z-index: 1
   -webkit-appearance: none
+
+  &:hover
+    transform: scale(1.2)
 
   &:focus
     outline: none
 
+  &--close
+    background-image: url('/dist/img/cross.svg')
 
 .credits
+  position: relative
+  z-index: 1
 
   &__link
+    border-bottom: 1px solid transparent
     color: $white
     text-decoration: none
-    border-bottom: 1px solid transparent
     transition: border-color 0.2s ease-in-out
 
     &:hover
       border-bottom: 1px solid $white
+
+.menu
+  background-color: black
+  bottom: 0
+  border-radius: 70%
+  height: 65px
+  left: 0
+  position: fixed
+  transform: translateY(100%)
+  transition: all 0.2s ease-in-out
+  width: 100%
+
+  &--reveal
+    transform: translateY(90%)
+
+  &--show
+    transform: translateY(0)
+    border-radius: 0
