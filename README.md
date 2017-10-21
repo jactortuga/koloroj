@@ -10,5 +10,7 @@ Named after the Esperanto word for colours, Koloroj is a background-color influe
 * Basic responsiveness implemented.
 * Site deployed to Heroku.
 
+---
+
 ###### Built using Sass, ECMAScript 6, Babel, Webpack and Express.
 ###### Made by Tortuga Labs
