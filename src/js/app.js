@@ -6,6 +6,7 @@ const siteBackground    = document.body;
 const siteHexContainer  = document.getElementById('siteHexContainer');
 const menuButton        = document.getElementById('menuButton');
 const menuContainer     = document.getElementById('menuContainer');
+const creditsText       = document.getElementById('creditsText');
 const colorRange        = 'ABCDEF0123456789';
 
 var generateColor = () => {
@@ -44,7 +45,9 @@ menuButton.addEventListener('click', function(ev) {
   if(menuButton.classList.contains('button--close')) {
     menuButton.classList.remove('button--close');
     menuContainer.classList.remove('menu--show');
+    creditsText.classList.remove('credits--hide');
   } else {
+    creditsText.classList.add('credits--hide');
     menuButton.classList.add('button--close');
     menuContainer.classList.add('menu--show');
   }

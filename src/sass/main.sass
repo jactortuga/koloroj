@@ -70,15 +70,15 @@ $iphone-small-break: 320px
   align-items: flex-end
   display: flex
   flex-direction: row
-  font-size: $tiny-font
+  font-size: 25px
   height: 50px
   justify-content: space-between
+  line-height: 25px
   text-align: right
   width: 100%
 
 .button
   background-color: transparent
-  background-image: url('/dist/img/paintbrush.svg')
   background-size: cover
   border: none
   cursor: pointer
@@ -96,28 +96,44 @@ $iphone-small-break: 320px
   &:focus
     outline: none
 
+  &--github
+    background-image: url('/dist/img/github.svg')
+
+  &--brush
+    background-image: url('/dist/img/paintbrush.svg')
+
   &--close
     background-image: url('/dist/img/cross.svg')
 
 .credits
-  position: relative
-  z-index: 1
+  font-family: Futura,Trebuchet MS,Arial,sans-serif
+  opacity: 1
+  transition: opacity 0.3s ease-in-out
+
+  &--hide
+    opacity: 0
+    transition: opacity 0.1s ease-in-out
 
   &__link
-    border-bottom: 1px solid transparent
+    border-bottom: 2px solid transparent
     color: $white
     text-decoration: none
     transition: border-color 0.2s ease-in-out
 
     &:hover
-      border-bottom: 1px solid $white
+      border-bottom: 2px solid $white
 
 .menu
+  align-items: center
   background-color: black
-  bottom: 0
   border-radius: 70%
+  bottom: 0
+  box-sizing: border-box
+  display: flex
   height: 65px
+  justify-content: space-between
   left: 0
+  padding: 0 20px 0 65px
   position: fixed
   transform: translateY(100%)
   transition: all 0.2s ease-in-out
