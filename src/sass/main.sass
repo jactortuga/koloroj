@@ -103,11 +103,15 @@ $iphone-small-break: 320px
   z-index: 2
   -webkit-appearance: none
 
-  &:hover
+  &:hover:enabled
     transform: scale(1.2)
 
   &:focus
     outline: none
+
+  &:disabled
+    cursor: auto
+    opacity: 0.2
 
   &--github
     background-image: url('/dist/img/github.svg')
@@ -120,13 +124,11 @@ $iphone-small-break: 320px
     height: 50px
     width: 50px
 
-
   &--copy
     background-image: url('/dist/img/copy.svg')
     height: 50px
     width: 50px
-    background-size:
-
+    background-size: 42px
 
   &--close
     background-image: url('/dist/img/cross.svg')

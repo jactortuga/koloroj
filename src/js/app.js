@@ -1,11 +1,14 @@
 import styles from '../sass/main.sass';
 
 let latestHexCopied     = false;
+let isHexCopied         = false;
+
 const keyboardKey       = 32;
 const altKey            = 18;
 const siteBackground    = document.body;
 const siteHexContainer  = document.getElementById('siteHexContainer');
 const menuButton        = document.getElementById('menuButton');
+const generateButton    = document.getElementById('generateButton');
 const menuContainer     = document.getElementById('menuContainer');
 const menuGrid          = document.getElementById('menuGrid');
 const creditsText       = document.getElementById('creditsText');
@@ -19,6 +22,8 @@ var generateColor = () => {
 };
 
 var copyColor = () => {
+  //isHexCopied = true
+  menuButton.disabled = false;
   var hexValue = siteHexContainer.innerHTML;
 
   if (hexValue.length > 7 || hexValue === latestHexCopied) return false;
@@ -75,6 +80,10 @@ menuButton.addEventListener('click', function() {
     menuButton.classList.add('button--close');
     menuContainer.classList.add('menu--show');
   }
+});
+
+generateButton.addEventListener('click', function() {
+  generateColor();
 });
 
 siteHexContainer.addEventListener('click', function() {
