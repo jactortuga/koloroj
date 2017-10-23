@@ -62,6 +62,7 @@ $iphone-small-break: 320px
     transition: all 0.2s ease-in-out
 
     &--hex
+      display: inline
       cursor: pointer
       font-size: $large-font
       font-weight: 500
@@ -70,6 +71,11 @@ $iphone-small-break: 320px
         background-color: black
         color: white
 
+  &__buttons
+    display: flex
+    justify-content: space-between
+    margin: 40px auto 0 auto
+    width: 150px
 
 .footer
   align-items: flex-end
@@ -84,6 +90,7 @@ $iphone-small-break: 320px
 
 .button
   background-color: transparent
+  background-position: center
   background-repeat: no-repeat
   background-size: contain
   border: none
@@ -107,6 +114,19 @@ $iphone-small-break: 320px
 
   &--brush
     background-image: url('/dist/img/paintbrush.svg')
+
+  &--bucket
+    background-image: url('/dist/img/bucket.svg')
+    height: 50px
+    width: 50px
+
+
+  &--copy
+    background-image: url('/dist/img/copy.svg')
+    height: 50px
+    width: 50px
+    background-size:
+
 
   &--close
     background-image: url('/dist/img/cross.svg')
