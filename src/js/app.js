@@ -3,8 +3,8 @@ import styles from '../sass/main.sass';
 let latestHexCopied     = false;
 let isHexCopied         = false;
 
-const keyboardKey       = 32;
-const altKey            = 18;
+const keyboardKey       = 37;
+const altKey            = 39;
 const siteBackground    = document.body;
 const siteHexContainer  = document.getElementById('siteHexContainer');
 const menuButton        = document.getElementById('menuButton');
@@ -26,12 +26,11 @@ var generateColor = () => {
 };
 
 var copyColor = () => {
-  // if (!isHexCopied) enableCopyFunctionality();
   var hexValue = siteHexContainer.innerHTML;
 
   if (hexValue.length > 7 || hexValue === latestHexCopied) return false;
 
-  enableCopyFunctionality();
+  animateColorMenu();
 
   var newContainer  = document.createElement('div');
   var newBox        = document.createElement('button');
@@ -53,7 +52,9 @@ var updateBackgroundColor = (newColor) => {
 
 };
 
-var enableCopyFunctionality = () => {
+var animateColorMenu = () => {
+  if (menuButton.classList.contains('button--close')) return false;
+
   menuButton.disabled = false;
   menuButton.classList.add('button--enable');
   menuContainer.classList.add('menu--enable');
@@ -62,9 +63,6 @@ var enableCopyFunctionality = () => {
     menuButton.classList.remove('button--enable');
     menuContainer.classList.remove('menu--enable');
   }, 600);
-  isHexCopied = true;
-
-  return true;
 };
 
 var updateTextValue = (newColor) => {
