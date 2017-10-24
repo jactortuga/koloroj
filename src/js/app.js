@@ -26,15 +26,7 @@ var generateColor = () => {
 };
 
 var copyColor = () => {
-  //isHexCopied = true
-  menuButton.disabled = false;
-  menuButton.classList.add('button--enable');
-  menuContainer.classList.add('menu--enable');
-
-  setTimeout(function () {
-    menuButton.classList.remove('button--enable');
-    menuContainer.classList.remove('menu--enable');
-  }, 600);
+  if (!isHexCopied) enableCopyFunctionality();
 
   var hexValue = siteHexContainer.innerHTML;
 
@@ -58,6 +50,20 @@ var copyColor = () => {
 var updateBackgroundColor = (newColor) => {
   siteBackground.style.backgroundColor = newColor;
 
+};
+
+var enableCopyFunctionality = () => {
+  menuButton.disabled = false;
+  menuButton.classList.add('button--enable');
+  menuContainer.classList.add('menu--enable');
+
+  setTimeout(function () {
+    menuButton.classList.remove('button--enable');
+    menuContainer.classList.remove('menu--enable');
+  }, 600);
+  isHexCopied = true;
+
+  return true;
 };
 
 var updateTextValue = (newColor) => {

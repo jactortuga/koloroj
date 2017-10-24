@@ -98,13 +98,13 @@ $iphone-small-break: 320px
   height: 25px
   position: relative
   transform: scale(1)
-  transition: transform 0.2s ease-in-out
+  transition: transform 0.1s ease-in-out
   width: 25px
   z-index: 2
   -webkit-appearance: none
 
   &:hover:enabled
-    transform: scale(1.2)
+    transform: scale(1.1)
 
   &:focus
     outline: none
@@ -120,6 +120,7 @@ $iphone-small-break: 320px
     background-image: url('/dist/img/paintbrush.svg')
 
   &--bucket
+    //background-color: red
     background-image: url('/dist/img/bucket.svg')
     height: 50px
     transition: transform 0.2s ease-in-out
@@ -130,7 +131,9 @@ $iphone-small-break: 320px
       transform: translateX(50px) scale(1.2)
 
   &--copy
-    background-image: url('/dist/img/copy.svg')
+
+    background-image: url('/dist/img/pantone.svg')
+    background-position: center bottom
     background-size: 42px
     height: 50px
     position: relative
@@ -162,9 +165,6 @@ $iphone-small-break: 320px
       100%
         transform: scale(1)
         opacity: 1
-
-    // &:hover:enabled
-    //   transform: scale(1.2)
 
 .credits
   font-family: Futura,Trebuchet MS,Arial,sans-serif
