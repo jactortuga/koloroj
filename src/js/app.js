@@ -28,6 +28,14 @@ var generateColor = () => {
 var copyColor = () => {
   //isHexCopied = true
   menuButton.disabled = false;
+  menuButton.classList.add('button--enable');
+  menuContainer.classList.add('menu--enable');
+
+  setTimeout(function () {
+    menuButton.classList.remove('button--enable');
+    menuContainer.classList.remove('menu--enable');
+  }, 600);
+
   var hexValue = siteHexContainer.innerHTML;
 
   if (hexValue.length > 7 || hexValue === latestHexCopied) return false;
