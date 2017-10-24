@@ -26,11 +26,12 @@ var generateColor = () => {
 };
 
 var copyColor = () => {
-  if (!isHexCopied) enableCopyFunctionality();
-
+  // if (!isHexCopied) enableCopyFunctionality();
   var hexValue = siteHexContainer.innerHTML;
 
   if (hexValue.length > 7 || hexValue === latestHexCopied) return false;
+
+  enableCopyFunctionality();
 
   var newContainer  = document.createElement('div');
   var newBox        = document.createElement('button');

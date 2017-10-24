@@ -3,7 +3,7 @@ $background-color-1: #117C57
 $white: #FFFFFF
 
 $large-font: 32px
-$medium-font: 20px
+$medium-font: 24px
 $small-font: 14px
 $tiny-font: 10px
 
@@ -26,6 +26,7 @@ $iphone-small-break: 320px
   padding: 20px
   transition: background-color 0.2s ease-in-out
   width: 100vw
+  font-weight: 200
 
 
 .header
@@ -65,7 +66,11 @@ $iphone-small-break: 320px
       display: inline
       cursor: pointer
       font-size: $large-font
-      font-weight: 500
+      letter-spacing: 1.4px
+      font-weight: 200
+
+      // &:hover
+      //   font-weight: 400
 
       &::selection
         background-color: black
@@ -117,21 +122,19 @@ $iphone-small-break: 320px
     background-image: url('/dist/img/github.svg')
 
   &--brush
-    background-image: url('/dist/img/paintbrush.svg')
+    background-image: url('/dist/img/art.svg')
 
   &--bucket
-    //background-color: red
     background-image: url('/dist/img/bucket.svg')
     height: 50px
     transition: transform 0.2s ease-in-out
-    transform: translateX(50px)
+    transform: translateX(50px) rotate(0)
     width: 50px
 
     &:hover:enabled
-      transform: translateX(50px) scale(1.2)
+      transform: translateX(50px) rotate(0.5turn)
 
   &--copy
-
     background-image: url('/dist/img/pantone.svg')
     background-position: center bottom
     background-size: 42px
@@ -147,11 +150,11 @@ $iphone-small-break: 320px
 
   &--positioned
     opacity: 1
-    transform: translateX(0)
+    transform: translateX(0) rotate(0)
     z-index: 0
 
     &:hover:enabled
-      transform: scale(1.2)
+      transform: scale(1.2) rotate(10deg)
 
   &--enable
     animation: scale 0.6s forwards
@@ -167,7 +170,6 @@ $iphone-small-break: 320px
         opacity: 1
 
 .credits
-  font-family: Futura,Trebuchet MS,Arial,sans-serif
   opacity: 1
   transition: opacity 0.3s ease-in-out
 
