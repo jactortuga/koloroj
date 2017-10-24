@@ -16,6 +16,8 @@ const creditsText       = document.getElementById('creditsText');
 const colorRange        = 'ABCDEF0123456789';
 
 var generateColor = () => {
+  copyButton.classList.add('button--positioned');
+  generateButton.classList.add('button--positioned');
   copyButton.disabled = false;
   let newHexValue = '#';
   for (let i = 0; i < 6; i++) newHexValue += colorRange.charAt(Math.floor(Math.random() * colorRange.length));
