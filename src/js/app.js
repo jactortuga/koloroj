@@ -7,7 +7,8 @@ const keyboardKey       = 37;
 const altKey            = 39;
 const siteBackground    = document.body;
 const siteHexContainer  = document.getElementById('siteHexContainer');
-const menuButton        = document.getElementById('menuButton');
+const menuOpenButton    = document.getElementById('menuOpenButton');
+const menuCloseButton   = document.getElementById('menuCloseButton');
 const copyButton        = document.getElementById('copyButton');
 const generateButton    = document.getElementById('generateButton');
 const menuContainer     = document.getElementById('menuContainer');
@@ -53,14 +54,14 @@ var updateBackgroundColor = (newColor) => {
 };
 
 var animateColorMenu = () => {
-  if (menuButton.classList.contains('button--close')) return false;
+  if (menuContainer.classList.contains('menu--show')) return false;
 
-  menuButton.disabled = false;
-  menuButton.classList.add('button--enable');
+  menuOpenButton.disabled = false;
+  menuOpenButton.classList.add('button--enable');
   menuContainer.classList.add('menu--enable');
 
   setTimeout(function () {
-    menuButton.classList.remove('button--enable');
+    menuOpenButton.classList.remove('button--enable');
     menuContainer.classList.remove('menu--enable');
   }, 600);
 };
@@ -75,28 +76,30 @@ document.body.onkeyup = function(ev){
   if (ev.keyCode === altKey) copyColor();
 };
 
-menuButton.addEventListener('mouseenter', function() {
+menuOpenButton.addEventListener('mouseenter', function() {
   menuContainer.classList.add('menu--reveal');
 });
 
-menuButton.addEventListener('mouseleave', function() {
+menuOpenButton.addEventListener('mouseleave', function() {
   menuContainer.classList.remove('menu--reveal');
 });
 
-menuButton.addEventListener('keyup', function(ev) {
+menuOpenButton.addEventListener('keyup', function(ev) {
   ev.preventDefault();
 });
 
-menuButton.addEventListener('click', function() {
-  if(menuButton.classList.contains('button--close')) {
-    // menuButton.classList.remove('button--close');
-    menuContainer.classList.remove('menu--show');
-    creditsText.classList.remove('credits--hide');
-  } else {
-    creditsText.classList.add('credits--hide');
-    // menuButton.classList.add('button--close');
-    menuContainer.classList.add('menu--show');
-  }
+
+
+menuCloseButton.addEventListener('click', function() {
+  creditsText.classList.remove('credits--hide');
+  menuOpenButton.classList.remove('button--hide');
+  menuContainer.classList.remove('menu--show');
+});
+
+menuOpenButton.addEventListener('click', function() {
+  creditsText.classList.add('credits--hide');
+  menuOpenButton.classList.add('button--hide');
+  menuContainer.classList.add('menu--show');
 });
 
 generateButton.addEventListener('click', function() {
