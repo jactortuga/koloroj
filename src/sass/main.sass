@@ -111,7 +111,7 @@ $iphone-small-break: 320px
 
   &:disabled
     cursor: auto
-    opacity: 0.2
+    opacity: 0
 
   &--github
     background-image: url('/dist/img/github.svg')
@@ -122,16 +122,30 @@ $iphone-small-break: 320px
   &--bucket
     background-image: url('/dist/img/bucket.svg')
     height: 50px
+    transition: transform 0.2s ease-in-out
+    transform: translateX(50px)
     width: 50px
+
+    &:hover:enabled
+      transform: translateX(50px) scale(1.2)
 
   &--copy
     background-image: url('/dist/img/copy.svg')
-    height: 50px
-    width: 50px
     background-size: 42px
+    height: 50px
+    position: relative
+    transition: transform 0.2s ease-in-out
+    transform: translateX(-50px)
+    width: 50px
+    z-index: -1
 
   &--close
     background-image: url('/dist/img/cross.svg')
+
+  &--positioned
+    opacity: 1
+    transform: translateX(0)
+    z-index: 0
 
 .credits
   font-family: Futura,Trebuchet MS,Arial,sans-serif

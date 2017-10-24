@@ -8,6 +8,7 @@ const altKey            = 18;
 const siteBackground    = document.body;
 const siteHexContainer  = document.getElementById('siteHexContainer');
 const menuButton        = document.getElementById('menuButton');
+const copyButton        = document.getElementById('copyButton');
 const generateButton    = document.getElementById('generateButton');
 const menuContainer     = document.getElementById('menuContainer');
 const menuGrid          = document.getElementById('menuGrid');
@@ -15,6 +16,7 @@ const creditsText       = document.getElementById('creditsText');
 const colorRange        = 'ABCDEF0123456789';
 
 var generateColor = () => {
+  copyButton.disabled = false;
   let newHexValue = '#';
   for (let i = 0; i < 6; i++) newHexValue += colorRange.charAt(Math.floor(Math.random() * colorRange.length));
   updateBackgroundColor(newHexValue);
@@ -86,6 +88,6 @@ generateButton.addEventListener('click', function() {
   generateColor();
 });
 
-siteHexContainer.addEventListener('click', function() {
+copyButton.addEventListener('click', function() {
   copyColor();
 });
