@@ -150,6 +150,11 @@ $iphone-small-break: 320px
 
   &--close
     background-image: url('/dist/img/cross.svg')
+    transition: transform 0.1s ease-in-out
+
+    &:hover:enabled
+      transition: transform 0.15s ease-in-out
+      transform: scale(1.15) rotate(90deg)
 
   &--hide
     opacity: 0
