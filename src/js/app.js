@@ -89,12 +89,12 @@ menuButton.addEventListener('keyup', function(ev) {
 
 menuButton.addEventListener('click', function() {
   if(menuButton.classList.contains('button--close')) {
-    menuButton.classList.remove('button--close');
+    // menuButton.classList.remove('button--close');
     menuContainer.classList.remove('menu--show');
     creditsText.classList.remove('credits--hide');
   } else {
     creditsText.classList.add('credits--hide');
-    menuButton.classList.add('button--close');
+    // menuButton.classList.add('button--close');
     menuContainer.classList.add('menu--show');
   }
 });
